@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 1</title>
+    <style>
+        body {background: beige; padding: 20px; color: darkblue;}
+        h1, h2 {font-family: monospace; color: darkgreen;}
+    </style>
+</head>
+<body>
+    <h1>oppgave 1</h1>
+    <script> 
+    const navn = "trym";
+    console.log (navn);
+    </script>
+    <style>
+    </style>
+    <p>se console -></p>
+
+
+
+        <h1>oppgave 2</h1>
+    <script>
+        let resultat =0;
+        console.log (resultat);
+        resultat++;
+         console.log (resultat);
+            </script>
+    <style>
+
+
+    </style>
+    <p>se console -></p>
+   
+    <h1>oppgave 3</h1>
+    <script>
+        // navn fra oppg2
+        const alder = 16;
+        const elev = true;
+        let tom;
+        console.log(typeof(navn));
+        console.log(typeof(alder));
+         console.log(typeof(elev));
+        console.log(typeof(tom));
+    </script>
+    <style></style>
+    <p>se console -></p>
+    
+    
+    <h1>oppgave 4</h1>
+    <h2 id="melding">ingen melding enda</h2>
+    <script>
+        const melding = document.querySelector("#melding");
+        console.log (melding.innerHTML)
+    </script>
+      <p>se console -></p>
+     
+     
+      <h1>oppgave 5</h1>
+      <script>
+        melding.textContent = "Javascript was here."
+         console.log (melding.textContent)
+      </script>
+       <p>se over og i console -></p>
+       
+       <h1>oppgave 6</h1>
+       <script>
+        function VisMelding() {
+            console.log("knappen ble trykket!");
+            melding.textContent = "du trykket på knappen!";
+        }
+       </script>
+       <button onclick="VisMelding()">trykk på meg</button>
+       <p>se console -></p>
+
+       <h1>oppgave 7</h1>
+       <p>se funksjon i oppgave 6(melding.textcontent)</p>
+
+       <h1>oppgave 8</h1>
+       <script>
+        function sihei() {
+            const navnInput = document.querySelector("#Navn");
+            const HeiMelding = document.querySelector("#outputNavn");
+            HeiMelding.textContent = "hei " + navnInput.value + "!";
+
+        }
+
+       </script>
+       <input type="text" id="Navn">;
+       <button onclick="sihei()">Si Hei</button>
+       <p id="outputNavn"></p>
+
+       <h1>oppgave 9</h1>
+       <script>
+        function laghilsen(navn) {
+            let tekst = "hei " + navn + "!";
+            return tekst;
+        }
+        const oppg9tekst =laghilsen("ola");
+        console.log(oppg9tekst);
+       </script>
+       <p>se console -></p>
+
+<h1>oppgave 10</h1>
+
+   <script>
+        function laghilsenIgjen(navn, alder) {
+            console.log(typeof(alder))
+            let tekst = "hei " + navn + ", du er " + alder + " år gammel!";
+            console.log(typeof(alder))
+            return tekst;
+        }
+        const oppg10tekst =laghilsenIgjen("peter", 17);
+        console.log(oppg10tekst);
+       </script>
+<p>se console -></p>
+
+<h1>oppgave 11</h1>
+<style>
+    .boks {
+background-color: rgb(100, 132, 121);
+font-size: 1.5em;
+color: red
+    }
+</style>
+
+<script>
+function byttfarge() {
+    const boks = document.querySelector("#boks");
+    boks.style.backgroundColor ="yellow";
+    boks.style.fontSize ="1.8em";
+    boks.style.color ="green";
+}
+</script>
+<div class="boks" id="boks"> her er boksen </div>
+<button onclick="byttfarge()">bytt farge</button>
+
+<h1>oppgave 12</h1>
+<script>
+ antallklikk = 0;
+function tellklikk() {
+antallklikk++;
+const teller = document.querySelector(#teller);
+teller.textContent = "du har klikket " + antallklikk + " ganger.";
+}
+</script>
+<button onclick="tellklikk()">klikk</button>
+<p id="teller">du har ikke klikket enda</p>
+
+<h1>oppgave 13</h1>
+<script>
+    const nyElev = {
+        navn: "trym",
+        alder: 16,
+        klasse: "2ita",
+        erElev: true,
+        presenter() {
+            return "jeg heter " + this.navn + " og går i " + this.klasse + "."
+        }
+    }
+    console.log (typeof(nyElev));
+    console.log (nyElev);
+    console.log (nyElev.navn);
+</script>
+<p>se console -></p>
+<h1>oppgave 14</h1>
+<script>
+    console.log(nyElev.presenter());
+    </script>
+    <p>se funksjon under oppgave 13</p>
+</body>
+</html>
