@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+        }
+            input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #484848;
+            color: rgb(185, 183, 183);
+            border: none;
+        }
+       
+        #resultat {
+            margin-top: 20px;
+            white-space: pre;
+            font-family: monospace;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>opprett elevkort</h2>
+    <input type="text" placeholder="skriv ditt navn her" id="navnInput">
+    <input type="number" placeholder="skriv din alder her" id="alderInput">
+    <input type="text" placeholder="skriv din klasse her" id="klasseInput">
+   
+   <button onclick="LagElevKort()">ny elev</button>
+    <div id="resultat"></div>
+
+    <script>
+        function LagElevKort() {
+
+
+            let navnVerdi = document.getElementById("navnInput").value;
+            let alderVerdi = document.getElementById("alderInput").value;
+            let klasseVerdi = document.getElementById("klasseInput").value;
+            
+            let elev = {
+                navn: navnVerdi,
+                alder: alderVerdi,
+                klasse: klasseVerdi,
+               
+                presenter: function() {
+                    return "-----------------------------\n          ELEVKORT\n\n" +
+                           "Navn: " + this.navn + "\n" +
+                           "Alder: " + this.alder + "\n" +
+                           "Klasse: " + this.klasse + "\n\n" +
+                           this.navn + " går i " + this.klasse + " og er " + this.alder + " år.\n" +
+                           "-----------------------------";
+                }
+        };
+
+        let ferdigTekst = elev.presenter();
+
+        let resultatDiv = document.getElementById("resultat")
+        resultatDiv.innerText =ferdigTekst;
+
+        resultatDiv.style.border = "5px solid black";
+         resultatDiv.style.padding = "20px";
+          resultatDiv.style.backgroundColor = "black";
+           resultatDiv.style.color = "white";
+
+           console.log(elev);
+    }
+    </script>
+</body>
+</html>
