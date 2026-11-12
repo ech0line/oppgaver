@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brukernavn generator</title>
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111214;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #1b1c20;
+            padding: 40px;
+            border-radius: 16px;
+            width: 350px;
+            border: 1px solid #33343a;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .beskrivelse {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            background-color: #25262b;
+            border: 1px solid #393a40;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background-color: #f0f0f0;
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #c9c9c9;
+        }
+
+        #resultat {
+            background-color: #25262b;
+            border: 1px solid #393a40;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-top: 25px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function lagbrukernavn() {
+const fornavn = document.querySelector("#fornavn").value;
+const etternavn = document.querySelector("#etternavn").value;
+const resultat = document.querySelector("#resultat");
+
+/* dette er for a sjekke at det er noe i begge feltene, og vis det er så lager den brukernavn*/
+if (fornavn !== "" && etternavn !== "") {
+const kortFornavn = fornavn.substring(0, 2);
+const kortEtternavn = etternavn.substring(0, 2);
+resultat.textContent = kortFornavn + "." + kortEtternavn + Math.floor(Math.random() * 1000);
+/* dette er for a manipulere css på ditt genererte brukernavn, mathrandom på slutten av resultat.textcontent er for et tilfelding genert 3 siffer tall på slutten av brukernavnet*/ 
+const farger = ["red", "blue", "green", "purple", "orange", "pink", "cyan"];
+
+const tilfeldigFarge = Math.floor(Math.random() * farger.length);
+/* dette er også for å manipulere css, skifte farge og størelse på teksten*/
+resultat.style.color = farger[tilfeldigFarge];
+resultat.style.fontSize = Math.floor(Math.random() * 20 + 20) + "px";
+resultat.style.fontWeight = "bold";
+}
+else {
+    resultat.innerHTML = "skriv fornavn og etternavn"
+}
+}
+    
+    </script>
+         <!-- dette er input boksen for navn og etternavn plus knappen og resultat -->
+          <div class="container">
+            <h1>lag ditt brukernavn</h1>
+            <p class="beskrivelse">lag ett tilfeldig brukernavn</p>
+            <input type="text" id="fornavn" placeholder="fornavn">
+    <input type="text" id="etternavn" placeholder="etternavn">
+    <button onclick="lagbrukernavn()"> generer brukernavn</button>
+    <p id="resultat"></p>
+ </div>
+</body> 
+         
+   
+</html>
